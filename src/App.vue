@@ -1,18 +1,21 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
+import Navbar from './components/shared/Navbar.vue'
+import Footer from './components/shared/Footer.vue'
 </script>
 
 <template>
-  <header>
-
-    <!-- Aqui são rotas criadas no "router/index.js", "funcionamento bem parecido com rails routes" -->
-        <RouterLink to="/">Talvez eu use</RouterLink>
-        <RouterLink to="/about">Este tambem</RouterLink>
-
-        <RouterView />
-
-  </header>
-
+  <Navbar />
+  <RouterView v-slot="{ Component }">
+    <component :is="Component" />
+  </RouterView>
+  <Footer />
 </template>
 
-<style scoped></style>
+<style scoped>
+.container {
+  max-width: 1204px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+</style>

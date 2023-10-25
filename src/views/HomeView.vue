@@ -1,10 +1,10 @@
-<!-- Aqui estou importando tudo que criei no GameList.vue -->
 <script setup>
-import GameList from '../components/GameList.vue'
+import GameList from '../components/modules/game-module/GameList.vue'
 </script>
-<!-- E aqui estou renderizando na pagina "home" -->
 <template>
-  <main>
+  <main class="container">
     <GameList />
   </main>
 </template>
+
+<style></style>
